@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Galaxification</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_galaxy_2.css') }}">
+    </head>
+    <body>
+        <div id="instructions">
+            <h1>Instructions</h1>
+            <p> Click on the "Choose File" button and select the appropriate galaxy, then click "Upload and Predict" and let our ML model classify for you!</p>
+            <p> Please note the following requirements: </p>
+            <p> Allowed file formats: {'png', 'jpg', 'jpeg'} </p>
+            <p> Max file Size: 5 MB</p>
+
+            <form action="/handleUpload" method="post" enctype="multipart/form-data">
+                Choose the file: <input type="file" name="file"/><BR>
+                    <input type="submit" value="Upload and Predict"/>
+            </form>
+        </div>
+
+        <div id="prediction"> {{ output }} </div>
+
+        <footer>
+            <p>Credits: Naga Sumanth</p>
+            <p>© 2020, University of North Texas </p>
+        </footer>
+
+        </div>
+    </body>
+</html> 
